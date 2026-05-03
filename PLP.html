@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homemade Bliss - Products</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8faf9;
+    color:#222;
+}
+
+/* PRODUCTS SECTION */
+
+.products{
+    padding:80px 10%;
+    text-align:center;
+}
+
+.products h2{
+    font-size:42px;
+    margin-bottom:10px;
+    color:#222;
+}
+
+.products p{
+    color:#777;
+    margin-bottom:50px;
+    font-size:16px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:40px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.card h3{
+    margin-top:18px;
+    font-size:20px;
+    color:#222;
+}
+
+.card-positive{
+    font-size:13px;
+    color:#46b39d;
+    margin-top:8px;
+    font-weight:500;
+}
+
+.price{
+    color:#38a169;
+    font-size:22px;
+    margin-top:12px;
+    font-weight:700;
+}
+
+/* ATTRIBUTES SECTION */
+
+.attributes{
+    padding:80px 10%;
+    background:#f3f7f5;
+    display:flex;
+    align-items:center;
+    gap:60px;
+}
+
+.attributes-text{
+    flex:1;
+    text-align:left;
+}
+
+.attributes h2{
+    font-size:42px;
+    margin-bottom:30px;
+    color:#222;
+}
+
+.attributes p{
+    color:#666;
+    font-size:16px;
+    margin-bottom:20px;
+    line-height:1.8;
+}
+
+.attribute-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.attribute-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.checkmark{
+    width:32px;
+    height:32px;
+    background:#17a697;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-weight:bold;
+    flex-shrink:0;
+}
+
+.attribute-item p{
+    margin:0;
+    color:#555;
+    font-size:15px;
+}
+
+.learn-btn{
+    margin-top:25px;
+    padding:12px 32px;
+    background:#17a697;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.learn-btn:hover{
+    background:#0f7f7d;
+}
+
+.attributes-img{
+    flex:1;
+    text-align:center;
+}
+
+.attributes-img img{
+    width:100%;
+    max-width:400px;
+    border-radius:12px;
+}
+
+/* TESTIMONIALS SECTION */
+
+.testimonials{
+    padding:80px 10%;
+    text-align:center;
+    background:#f8faf9;
+}
+
+.testimonials h2{
+    font-size:42px;
+    margin-bottom:10px;
+    color:#222;
+}
+
+.testimonials p{
+    color:#666;
+    margin-bottom:50px;
+    font-size:16px;
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.testimonial-card{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.testimonial-card:hover{
+    transform:translateY(-5px);
+}
+
+.testimonial-card img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.stars{
+    color:#f4b400;
+    font-size:20px;
+    margin-bottom:15px;
+}
+
+.testimonial-card h3{
+    font-size:18px;
+    color:#333;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.testimonial-card h4{
+    margin-top:15px;
+    color:#777;
+    font-weight:500;
+    font-size:15px;
+}
+
+/* POPULAR PRODUCTS SECTION */
+
+.popular-products{
+    padding:80px 10%;
+    text-align:center;
+    background:#f7fbf8;
+}
+
+.popular-products h2{
+    font-size:42px;
+    margin-bottom:10px;
+    color:#222;
+}
+
+.popular-products p{
+    color:#777;
+    margin-bottom:50px;
+    font-size:16px;
+}
+
+.popular-product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+}
+
+.popular-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    transition:0.3s;
+    text-align:center;
+}
+
+.popular-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+.popular-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    transition:0.3s;
+}
+
+.popular-card:hover img{
+    transform:scale(1.05);
+}
+
+.popular-card-content{
+    padding:25px;
+}
+
+.popular-card h3{
+    font-size:20px;
+    margin-bottom:8px;
+    color:#222;
+    font-weight:600;
+}
+
+.popular-card-price{
+    font-size:24px;
+    color:#38a169;
+    font-weight:700;
+}
+
+/* FOOTER */
+
+footer{
+    background:#1f2937;
+    color:white;
+    text-align:center;
+    padding:40px 10%;
+    margin-top:0;
+}
+
+footer p{
+    margin-bottom:15px;
+    font-size:15px;
+}
+
+footer a{
+    color:#17a697;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+footer a:hover{
+    color:#fff;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.products,
+.testimonials,
+.popular-products{
+    padding:60px 5%;
+}
+
+.attributes{
+    padding:60px 5%;
+    flex-direction:column;
+    gap:40px;
+}
+
+.attributes-text,
+.attributes-img{
+    flex:1;
+}
+
+.product-grid,
+.testimonial-grid,
+.popular-product-grid{
+    grid-template-columns:1fr;
+    gap:30px;
+}
+
+.products h2,
+.attributes h2,
+.testimonials h2,
+.popular-products h2{
+    font-size:32px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- SECTION 1: PRODUCTS -->
+
+<section class="products">
+
+<h2>Our Handcrafted Collections</h2>
+<p>Discover our finest handmade items crafted by Indian artisans</p>
+
+<div class="product-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1000&auto=format&fit=crop" alt="Terracotta Pot">
+<h3>Terracotta Water Pot</h3>
+<p class="card-positive">✓ Cooling & Eco-friendly</p>
+<div class="price">₹549</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000&auto=format&fit=crop" alt="Bamboo Basket">
+<h3>Handwoven Bamboo Basket</h3>
+<p class="card-positive">✓ Natural & Durable</p>
+<div class="price">₹399</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1000&auto=format&fit=crop" alt="Jute Storage Bag">
+<h3>Jute Storage Bag</h3>
+<p class="card-positive">✓ Biodegradable & Sturdy</p>
+<div class="price">₹299</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=1000&auto=format&fit=crop" alt="Clay Aroma Lamp">
+<h3>Handmade Clay Aroma Lamp</h3>
+<p class="card-positive">✓ Natural & Therapeutic</p>
+<div class="price">₹699</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1000&auto=format&fit=crop" alt="Wooden Wall Art">
+<h3>Wooden Wall Art Carving</h3>
+<p class="card-positive">✓ Artistic & Unique</p>
+<div class="price">₹899</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1000&auto=format&fit=crop" alt="Wooden Serving Tray">
+<h3>Wooden Serving Tray</h3>
+<p class="card-positive">✓ Premium & Functional</p>
+<div class="price">₹599</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=1000&auto=format&fit=crop" alt="Macrame Wall Hanging">
+<h3>Macrame Wall Hanging</h3>
+<p class="card-positive">✓ Bohemian & Trendy</p>
+<div class="price">₹799</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1000&auto=format&fit=crop" alt="Hand-Painted Ceramic Pot">
+<h3>Hand-Painted Ceramic Pot</h3>
+<p class="card-positive">✓ Colorful & Decorative</p>
+<div class="price">₹459</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- SECTION 2: POSITIVE ATTRIBUTES -->
+
+<section class="attributes">
+
+<div class="attributes-text">
+<h2>Handcrafted with Traditional Art</h2>
+<p>Every piece is carefully created by skilled Indian artisans using time-honored techniques passed down through generations, bringing authentic craftsmanship to your home.</p>
+
+<div class="attribute-list">
+<div class="attribute-item">
+<div class="checkmark">✓</div>
+<p><strong>Eco-Sustainable:</strong> All recyclable materials, 0% CO2 emissions</p>
+</div>
+
+<div class="attribute-item">
+<div class="checkmark">✓</div>
+<p><strong>Hypoallergenic:</strong> 100% natural, human-friendly ingredients</p>
+</div>
+
+<div class="attribute-item">
+<div class="checkmark">✓</div>
+<p><strong>Handmade:</strong> All items are craftily made with love by artisans</p>
+</div>
+
+<div class="attribute-item">
+<div class="checkmark">✓</div>
+<p><strong>Long-Lasting:</strong> No more waste. Created for durability</p>
+</div>
+</div>
+
+<button class="learn-btn">Learn More</button>
+</div>
+
+<div class="attributes-img">
+<img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1200&auto=format&fit=crop" alt="Handcrafted Products">
+</div>
+
+</section>
+
+<!-- SECTION 3: TESTIMONIALS -->
+
+<section class="testimonials">
+
+<h2>What Our Customers Say</h2>
+<p>Real feedback from happy customers who love our handcrafted products</p>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+<img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1" alt="Priya Sharma">
+<div class="stars">★★★☆</div>
+<h3>"Love the authenticity!"</h3>
+<h4>Priya Sharma - Mumbai</h4>
+</div>
+
+<div class="testimonial-card">
+<img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1" alt="Rahul Verma">
+<div class="stars">★★★★★</div>
+<h3>"Perfect for my home!"</h3>
+<h4>Rahul Verma - Delhi</h4>
+</div>
+
+<div class="testimonial-card">
+<img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1" alt="Ananya Roy">
+<div class="stars">★★★★</div>
+<h3>"Amazing quality & craftsmanship"</h3>
+<h4>Ananya Roy - Bangalore</h4>
+</div>
+
+</div>
+
+</section>
+
+<!-- SECTION 4: POPULAR PRODUCTS -->
+
+<section class="popular-products">
+
+<h2>Popular</h2>
+<p>Our top selling products that you may like</p>
+
+<div class="popular-product-grid">
+
+<div class="popular-card">
+<img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=1000&auto=format&fit=crop" alt="Clay Aroma Lamp">
+<div class="popular-card-content">
+<h3>Handmade Clay Aroma Lamp</h3>
+<div class="popular-card-price">₹699</div>
+</div>
+</div>
+
+<div class="popular-card">
+<img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?q=80&w=1000&auto=format&fit=crop" alt="Macrame Hanging">
+<div class="popular-card-content">
+<h3>Macrame Wall Hanging</h3>
+<div class="popular-card-price">₹799</div>
+</div>
+</div>
+
+<div class="popular-card">
+<img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1000&auto=format&fit=crop" alt="Wooden Wall Art">
+<div class="popular-card-content">
+<h3>Wooden Wall Art Carving</h3>
+<div class="popular-card-price">₹899</div>
+</div>
+</div>
+
+<div class="popular-card">
+<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1000&auto=format&fit=crop" alt="Terracotta Pot">
+<div class="popular-card-content">
+<h3>Terracotta Water Pot</h3>
+<div class="popular-card-price">₹549</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+<p>&copy; 2026 Handmade India | Crafted with Love</p>
+<p>Supporting Local Indian Artisans | Sustainable & Eco-Friendly Products</p>
+</footer>
+
+</body>
+</html>
